@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    container_name: aluno_db
+    image: postgres
+    environment:
+      POSTGRES_DB: aluno
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
